@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.development';
 
 @Component({
@@ -7,7 +8,10 @@ import { environment } from 'src/environments/environment.development';
   styleUrls: ['./logout.component.css'],
 })
 export class LogoutComponent implements OnInit {
+  constructor(private _router: Router) {}
+
   ngOnInit(): void {
-    environment.tokenUser = '';
+    if (environment.tokenUser.length > 0) environment.tokenUser = '';
+    else this._router.navigate(['/']);
   }
 }
