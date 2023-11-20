@@ -17,7 +17,12 @@
       </tr>
     </tbody>
   </table>
-  <div class="row">
+  <img
+    *ngIf="!compras"
+    class="mx-auto d-block"
+    src="../../../assets/images/loading.gif"
+  />
+  <div class="row mb-3">
     <div class="col-6">
       <a class="btn btn-primary w-100 mt-3" [routerLink]="['/perfil']">
         Volver al perfil
@@ -30,8 +35,3 @@
     </div>
   </div>
 </div>
-<img
-  *ngIf="!compras"
-  class="mx-auto d-block"
-  src="../../../assets/images/loading.gif"
-/>
