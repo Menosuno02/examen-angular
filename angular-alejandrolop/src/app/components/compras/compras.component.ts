@@ -19,8 +19,6 @@ export class ComprasComponent implements OnInit {
       this._service.getCompras().subscribe((response) => {
         this.compras = response;
       });
-    } else {
-      this._router.navigate(['/']);
-    }
+    } else this._router.navigate(['/']);
   }
 }

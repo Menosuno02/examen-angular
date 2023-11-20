@@ -21,13 +21,10 @@ export class CreatepedidoComponent implements OnInit {
       this._service.getCubos().subscribe((response) => {
         this.cubos = response;
       });
-    } else {
-      this._router.navigate(['/']);
-    }
+    } else this._router.navigate(['/']);
   }
   comprarCubo(): void {
     let cubo = this.selectCubo.nativeElement.value;
-    console.log(cubo);
     this._service.comprarCubo(cubo).subscribe((response) => {
       this._router.navigate(['/compras']);
     });

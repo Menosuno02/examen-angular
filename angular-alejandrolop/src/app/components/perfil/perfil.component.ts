@@ -19,8 +19,6 @@ export class PerfilComponent implements OnInit {
       this._service.perfilUser().subscribe((response) => {
         this.user = response;
       });
-    else {
-      this._router.navigate(['/']);
-    }
+    else this._router.navigate(['/']);
   }
 }

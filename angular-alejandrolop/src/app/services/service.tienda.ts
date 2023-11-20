@@ -85,6 +85,6 @@ export class ServiceTienda {
     let header = new HttpHeaders({
       Authorization: 'bearer ' + environment.tokenUser,
     });
-    return this._http.post(url + request, { headers: header });
+    return this._http.post(url + request, null, { headers: header });
   }
 }
