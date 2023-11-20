@@ -1,0 +1,25 @@
+<div>
+  <h1>Tus compras</h1>
+  <hr class="border border-danger opacity-100" />
+  <table class="table" *ngIf="compras">
+    <thead class="border-danger">
+      <tr>
+        <th>Núm. Pedido</th>
+        <th>ID Cubo</th>
+        <th>Fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let compra of compras">
+        <td>{{ compra.idPedido }}</td>
+        <td>{{ compra.idCubo }}</td>
+        <td>{{ compra.fechaPedido }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<img
+  *ngIf="!compras"
+  class="mx-auto d-block"
+  src="../../../assets/images/loading.gif"
+/>

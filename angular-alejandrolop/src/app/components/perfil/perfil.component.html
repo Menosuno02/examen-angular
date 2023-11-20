@@ -1,0 +1,31 @@
+<div *ngIf="user">
+  <h1>Mi perfil (User {{ user.idUsuario }})</h1>
+  <hr class="border border-danger opacity-100" />
+  <table class="table">
+    <thead class="border-danger">
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ user.nombre }}</td>
+        <td>{{ user.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <img
+    *ngIf="!user"
+    class="d-block mx-auto"
+    src="../../../assets/images/loading.gif"
+  />
+  <button class="btn btn-primary w-100 mt-3" [routerLink]="['/compras']">
+    Mostrar compras
+  </button>
+</div>
+<img
+  *ngIf="!user"
+  class="mx-auto d-block"
+  src="../../../assets/images/loading.gif"
+/>

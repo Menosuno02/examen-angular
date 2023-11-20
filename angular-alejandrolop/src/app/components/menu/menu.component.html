@@ -1,0 +1,105 @@
+<nav class="navbar navbar-expand-md bg-danger" data-bs-theme="dark">
+  <div class="container-fluid">
+    <span class="navbar-brand">Examen Angular</span>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/']">Cubos</a>
+        </li>
+        <li class="nav-item dropdown" *ngIf="marcas">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Marcas
+          </a>
+          <ul class="dropdown-menu">
+            <li *ngFor="let marca of marcas">
+              <a class="dropdown-item" [routerLink]="['/cubos', marca]">
+                {{ marca }}
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Seguridad
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a
+                class="dropdown-item"
+                *ngIf="token.length == 0"
+                [routerLink]="['/login']"
+              >
+                Iniciar sesión
+              </a>
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                *ngIf="token.length == 0"
+                [routerLink]="['/register']"
+              >
+                Registrarse
+              </a>
+            </li>
+            <li>
+              <a
+                *ngIf="token.length > 0"
+                class="dropdown-item"
+                [routerLink]="['/logout']"
+              >
+                Logout
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" *ngIf="token.length > 0">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Usuario
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" [routerLink]="['/perfil']">Perfil</a>
+            </li>
+            <li>
+              <a class="dropdown-item" [routerLink]="['/compras']">Compras</a>
+            </li>
+            <li>
+              <a class="dropdown-item" [routerLink]="['/pedido']">
+                Realizar pedido
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
