@@ -20,7 +20,7 @@ export class RegisterComponent {
     let email = this.controlEmail.nativeElement.value;
     let pass = this.controlPass.nativeElement.value;
     this._service.registerUser(nombre, email, pass).subscribe((response) => {
-      this._router.navigate(['/']);
+      this._router.navigate(['/login']);
     });
   }
 }

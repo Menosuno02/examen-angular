@@ -19,7 +19,7 @@ export class LoginComponent {
     let pass = this.controlPass.nativeElement.value;
     this._service.loginUser(email, pass).subscribe((response) => {
       environment.tokenUser = response.response;
-      this._router.navigate(['/']);
+      this._router.navigate(['/perfil']);
     });
   }
 }

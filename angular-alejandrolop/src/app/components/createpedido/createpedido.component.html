@@ -3,7 +3,7 @@
   <hr class="border border-danger opacity-100" />
   <form #pedidoform="ngForm" (ngSubmit)="comprarCubo()">
     <div class="mt-3">
-      <label>Elige un cubo</label>
+      <label class="form-label">Elige un cubo</label>
       <select name="selectcubo" #selectcubo class="form-select">
         <option *ngFor="let cubo of cubos" [value]="cubo.idCubo">
           {{ cubo.nombre }}
